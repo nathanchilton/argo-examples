@@ -2,6 +2,15 @@
 
 name: TestArgoCdWebhook
 
+inputs:
+  argo_id:
+    description: 'Some ID sent by ArgoCD'
+    required: true
+  #   default: '1'
+  # octocat-eye-color:
+  #   description: 'Eye color of the Octocats'
+  #   required: true
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
@@ -15,7 +24,7 @@ on:
 
   # Allows external webhook trigger
   repository_dispatch:
-    types: webhook  
+    types: webhook
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,6 +41,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+
+      # Runs a single command using the runners shell
+      - name: Echo an Environment Variable
+        run: echo $INPUT_ARGO_ID
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script

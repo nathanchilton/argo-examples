@@ -21,15 +21,6 @@ on:
 
   # Allows external webhook trigger
   repository_dispatch:
-    types: webhook
-    inputs:
-      argo_id:
-        description: 'Some ID sent by ArgoCD'
-        required: true
-      #   default: '1'
-      # octocat-eye-color:
-      #   description: 'Eye color of the Octocats'
-      #   required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

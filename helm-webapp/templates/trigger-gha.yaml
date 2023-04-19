@@ -22,7 +22,7 @@ spec:
             - "curl"
             - "-X"
             - "POST"
-            - "'https://api.github.com/repos/nathanchilton/argo-examples/actions/workflows/test.yml/dispatches'"
+            - 'https://api.github.com/repos/nathanchilton/argo-examples/actions/workflows/test.yml/dispatches'
             - "--header"
             - "'Accept: application/vnd.github+json'"
             - "--header"

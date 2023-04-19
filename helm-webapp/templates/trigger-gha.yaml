@@ -19,7 +19,7 @@ spec:
                 name: gha-token
                 key: token
           command:
-            - 'echo'
-            - "$GHA_TOKEN"
+            - 'env'
+            # - "$GHA_TOKEN"
       restartPolicy: Never
   backoffLimit: 2

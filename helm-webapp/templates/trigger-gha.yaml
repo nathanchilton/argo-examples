@@ -61,12 +61,12 @@ spec:
             --header 'Accept: application/vnd.github+json' \
             --header "Authorization: token $GHA_TOKEN" \
             --header 'Content-Type: application/json' \
-            --data-raw '{
-            "ref": "karate_main",
-            "inputs": {
-            "trigger_reason": "'"$TRIGGER_REASON"'",
-            "trigger_hostname": "'"$HOSTNAME"'"
-            }
+            --data-raw '{ \
+            "ref": "karate_main", \
+            "inputs": { \
+            "trigger_reason": "'"$TRIGGER_REASON"'", \
+            "trigger_hostname": "'"$HOSTNAME"'" \
+            } \
             }'
 
 

@@ -44,6 +44,6 @@ spec:
             - 'Content-Type: application/json'
             - "--data-raw"
             # - '{"ref": "karate_main", "inputs": {"argo_id": "1234"}}'
-            - "{\"ref\": \"karate_main\", \"inputs\": {\"argo_id\": \"$(HOSTNAME)\"}}"
+            - "{\"ref\": \"karate_main\", \"inputs\": {\"argo_id\": \"$HOSTNAME\"}}"
       restartPolicy: Never
   backoffLimit: 2

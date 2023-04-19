@@ -49,6 +49,7 @@ spec:
             - "--data-raw"
             # - '{"ref": "karate_main", "inputs": {"argo_id": "1234"}}'
             # - "{\"ref\": \"karate_main\", \"inputs\": {\"argo_id\": \"$HOSTNAME\"}}"
-            - "{\"ref\": \"karate_main\", \"inputs\": {\"trigger\": \"$(TRIGGER_REASON)\"}}"
+            # - "{\"ref\": \"karate_main\", \"inputs\": {\"trigger\": \"$(TRIGGER_REASON)\"}}"
+            - "{\"ref\": \"karate_main\", \"inputs\": {\"trigger_reason\": \"$(TRIGGER_REASON)\"}, {\"trigger_hostname\": \"$(HOSTNAME)\"}}"
       restartPolicy: Never
   backoffLimit: 2

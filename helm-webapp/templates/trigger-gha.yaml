@@ -18,6 +18,8 @@ spec:
               secretKeyRef:
                 name: gha-token
                 key: token
+          - name: TRIGGER_REASON
+            value: "argo-examples"
           # command:
           #   - "curl"
           #   - "-X"
@@ -44,6 +46,7 @@ spec:
             - 'Content-Type: application/json'
             - "--data-raw"
             # - '{"ref": "karate_main", "inputs": {"argo_id": "1234"}}'
-            - "{\"ref\": \"karate_main\", \"inputs\": {\"argo_id\": \"$HOSTNAME\"}}"
+            # - "{\"ref\": \"karate_main\", \"inputs\": {\"argo_id\": \"$HOSTNAME\"}}"
+            - "{\"ref\": \"karate_main\", \"inputs\": {\"trigger\": \"$TRIGGER_REASON\"}}"
       restartPolicy: Never
   backoffLimit: 2

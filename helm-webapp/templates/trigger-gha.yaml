@@ -20,6 +20,6 @@ spec:
                 key: token
           command:
             - echo
-            - "$GHA_TOKEN"
+            - "$CURL_VERSION"
       restartPolicy: Never
   backoffLimit: 2

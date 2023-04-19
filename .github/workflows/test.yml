@@ -43,7 +43,7 @@ jobs:
         run: env
 
       # Runs a single command using the runners shell
-      - name: Echo an Environment Variable
+      - name: Echo the value of inputs.argo_id
         run: echo ${{ inputs.argo_id }}
 
       # Runs a set of commands using the runners shell

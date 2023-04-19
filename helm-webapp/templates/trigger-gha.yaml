@@ -30,6 +30,6 @@ spec:
             - "--header"
             - 'Content-Type: application/json'
             - "--data-raw"
-            - '{\"ref\": \"master\", \"inputs\": {\"argo_id\": \"1234\"}}'
+            - '{"ref": "master", "inputs": {"argo_id": "1234"}}'
       restartPolicy: Never
   backoffLimit: 2

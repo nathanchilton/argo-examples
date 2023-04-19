@@ -35,7 +35,6 @@ spec:
             - "curl"
             - "-X"
             - "POST"
-            # - 'https://api.github.com/repos/nathanchilton/argo-examples/actions/workflows/test.yml/dispatches'
             - 'https://api.github.com/repos/clinicalresearchio/crio-testing-automation/actions/workflows/karate-tests.yml/dispatches'
             - "--header"
             - 'Accept: application/vnd.github+json'
@@ -44,6 +43,7 @@ spec:
             - "--header"
             - 'Content-Type: application/json'
             - "--data-raw"
-            - '{"ref": "karate_main", "inputs": {"argo_id": "1234"}}'
+            # - '{"ref": "karate_main", "inputs": {"argo_id": "1234"}}'
+            - '{"ref": "karate_main", "inputs": {"argo_id": "$(HOSTNAME)"}}'
       restartPolicy: Never
   backoffLimit: 2

@@ -1,3 +1,5 @@
+#!/bin/sh
+echo $GHA_TOKEN
 curl -X POST \
   'https://api.github.com/repos/nathanchilton/argo-examples/actions/workflows/test.yml/dispatches' \
   --header 'Accept: application/vnd.github+json' \

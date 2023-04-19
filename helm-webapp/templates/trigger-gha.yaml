@@ -19,7 +19,7 @@ spec:
                 name: gha-token
                 key: token
           command:
-            - "echo"
-            - "$(CURL_VERSION)"
+            - "./run-tests.sh"
+            # - "$(CURL_VERSION)"
       restartPolicy: Never
   backoffLimit: 2

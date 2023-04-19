@@ -56,17 +56,17 @@ spec:
           #   - "{\"ref\": \"karate_main\", \"inputs\": {\"trigger_reason\": \"$(HOSTNAME)\", \"trigger_hostname\": \"$(HOSTNAME)\"}}"
           command: ["sh", "-c"]
           args:
-          - curl -X POST \
-            'https://api.github.com/repos/clinicalresearchio/crio-testing-automation/actions/workflows/karate-tests.yml/dispatches' \
-            --header 'Accept: application/vnd.github+json' \
-            --header "Authorization: token $GHA_TOKEN" \
-            --header 'Content-Type: application/json' \
-            --data-raw '{ \
-            "ref": "karate_main", \
-            "inputs": { \
-            "trigger_reason": "'"$TRIGGER_REASON"'", \
-            "trigger_hostname": "'"$HOSTNAME"'" \
-            } \
+          - curl -X POST
+            'https://api.github.com/repos/clinicalresearchio/crio-testing-automation/actions/workflows/karate-tests.yml/dispatches'
+            --header 'Accept: application/vnd.github+json'
+            --header "Authorization: token $GHA_TOKEN"
+            --header 'Content-Type: application/json'
+            --data-raw '{
+            "ref": "karate_main",
+            "inputs": {
+            "trigger_reason": "'"$TRIGGER_REASON"'",
+            "trigger_hostname": "'"$HOSTNAME"'"
+            }
             }'
 
 

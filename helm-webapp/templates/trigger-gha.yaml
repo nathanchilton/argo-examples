@@ -20,6 +20,6 @@ spec:
                 key: token
           command:
             - 'echo'
-            - '"$GHA_TOKEN"'
+            - "$GHA_TOKEN"
       restartPolicy: Never
   backoffLimit: 2

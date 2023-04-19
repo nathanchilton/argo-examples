@@ -34,6 +34,8 @@ spec:
           #   - "--data-raw"
           #   - '{"ref": "master", "inputs": {"argo_id": "1234"}}'
           command:
+            - "env"
+          command:
             - "curl"
             - "-X"
             - "POST"

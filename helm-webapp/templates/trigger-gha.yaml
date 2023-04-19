@@ -35,9 +35,9 @@ spec:
           #   - '{"ref": "master", "inputs": {"argo_id": "1234"}}'
           # command:
           #   - "export"
-          command:
-            - "ASDF=$HOSTNAME"
-            - "env"
+          # command:
+          #   - "ASDF=$HOSTNAME"
+          #   - "env"
           # command:
           #   - "curl"
           #   - "-X"
@@ -54,5 +54,24 @@ spec:
           #   # - "{\"ref\": \"karate_main\", \"inputs\": {\"argo_id\": \"$HOSTNAME\"}}"
           #   # - "{\"ref\": \"karate_main\", \"inputs\": {\"trigger\": \"$(TRIGGER_REASON)\"}}"
           #   - "{\"ref\": \"karate_main\", \"inputs\": {\"trigger_reason\": \"$(HOSTNAME)\", \"trigger_hostname\": \"$(HOSTNAME)\"}}"
+          command: ["sh", "-c"]
+          args:
+          - curl -X POST \
+            'https://api.github.com/repos/clinicalresearchio/crio-testing-automation/actions/workflows/karate-tests.yml/dispatches' \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: token $GHA_TOKEN" \
+            --header 'Content-Type: application/json' \
+            --data-raw '{
+            "ref": "karate_main",
+            "inputs": {
+            "trigger_reason": "'"$TRIGGER_REASON"'",
+            "trigger_hostname": "'"$HOSTNAME"'"
+            }
+            }'
+
+
       restartPolicy: Never
   backoffLimit: 2
+
+
+            {"ref": "karate_main", "inputs": {"trigger_reason": "$(HOSTNAME)", "trigger_hostname": "$(HOSTNAME)"}}"
